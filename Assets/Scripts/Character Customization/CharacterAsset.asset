@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daaddb40bb9d6a4b91aa11bd1e58c88, type: 3}
+  m_Name: CharacterAsset
+  m_EditorClassIdentifier: 
+  Cape:
+  - {fileID: 4300120, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300122, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Belt:
+  - {fileID: 4300118, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300116, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  PauldronL:
+  - {fileID: 4300148, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300144, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  PauldronR:
+  - {fileID: 4300150, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300146, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Eyebrows:
+  - {fileID: 4300132, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300134, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  ElbowsL:
+  - {fileID: 4300128, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300124, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  ElbowsR:
+  - {fileID: 4300130, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300126, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  KneeL:
+  - {fileID: 4300140, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300136, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  KneeR:
+  - {fileID: 4300142, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300138, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_Hair:
+  - {fileID: 4300112, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300114, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_Head:
+  - {fileID: 4300100, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300102, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_Torso:
+  - {fileID: 4300108, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300110, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_Legs:
+  - {fileID: 4300104, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300106, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_Forearm: []
+  F_Arm: []
+  F_Hand: []
+  F_Calf: []
+  F_Feet: []
+  M_Hair:
+  - {fileID: 4300056, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300058, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_Head:
+  - {fileID: 4300040, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300042, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_FacialHair:
+  - {fileID: 4300018, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300016, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_Torso:
+  - {fileID: 4300054, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300052, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_Legs:
+  - {fileID: 4300036, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300038, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_Forearm: []
+  M_Arm: []
+  M_Hand: []
+  M_Calf: []
+  M_Feet: []
