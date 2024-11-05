@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CharacterCustomiser : MonoBehaviour
 {
-    public CharacterAssetSO characterAssetSO;
+    public UnisexCharacterSO unisexUnisexCharacterSO;
+    public GenderedCharacterSO maleCharacterSO;
+    public GenderedCharacterSO femaleCharacterSO;
     
     [Header("Unisex")]
     public SkinnedMeshRenderer Cape;
@@ -15,63 +18,90 @@ public class CharacterCustomiser : MonoBehaviour
     public SkinnedMeshRenderer KneeL;
     public SkinnedMeshRenderer KneeR;
     
-    [Header("Female")]
-    public SkinnedMeshRenderer F_Hair;
-    public SkinnedMeshRenderer F_Head;
-    public SkinnedMeshRenderer F_Torso;
-    public SkinnedMeshRenderer F_Legs;
-    public SkinnedMeshRenderer [] F_Forearm;
-    public SkinnedMeshRenderer [] F_Arm;
-    public SkinnedMeshRenderer [] F_Hand;
-    public SkinnedMeshRenderer [] F_Calf;
-    public SkinnedMeshRenderer [] F_Feet;
-    
-    [Header("Male")]
-    public SkinnedMeshRenderer M_Hair;
-    public SkinnedMeshRenderer M_Head;
-    public SkinnedMeshRenderer M_FacialHair;
-    public SkinnedMeshRenderer M_Torso;
-    public SkinnedMeshRenderer M_Legs;
-    public SkinnedMeshRenderer [] M_Forearm;
-    public SkinnedMeshRenderer [] M_Arm;
-    public SkinnedMeshRenderer [] M_Hand;
-    public SkinnedMeshRenderer [] M_Calf;
-    public SkinnedMeshRenderer [] M_Feet;
+    [Header("Gendered")]
+    public SkinnedMeshRenderer Hair;
+    public SkinnedMeshRenderer Head;
+    public SkinnedMeshRenderer FacialHair;
+    public SkinnedMeshRenderer Torso;
+    public SkinnedMeshRenderer Legs;
+    public SkinnedMeshRenderer ForearmL;
+    public SkinnedMeshRenderer ForearmR;
+    public SkinnedMeshRenderer ArmL;
+    public SkinnedMeshRenderer ArmR;
+    public SkinnedMeshRenderer HandL;
+    public SkinnedMeshRenderer HandR;
+    public SkinnedMeshRenderer CalfL;
+    public SkinnedMeshRenderer CalfR;
+    public SkinnedMeshRenderer FeetL; 
+    public SkinnedMeshRenderer FeetR;
     
     public void CreateRandomUnisexCharacter()
     {
-        Cape.sharedMesh = characterAssetSO.Cape[Random.Range(0, characterAssetSO.Cape.Length)];
-        Belt.sharedMesh = characterAssetSO.Belt[Random.Range(0, characterAssetSO.Belt.Length)];
-        Eyebrows.sharedMesh = characterAssetSO.Eyebrows[Random.Range(0, characterAssetSO.Eyebrows.Length)];
-        PauldromL.sharedMesh = characterAssetSO.PauldronL[Random.Range(0, characterAssetSO.PauldronL.Length)];
-        PauldromR.sharedMesh = characterAssetSO.PauldronR[Random.Range(0, characterAssetSO.PauldronR.Length)];
-        ElbowsL.sharedMesh = characterAssetSO.ElbowsL[Random.Range(0, characterAssetSO.ElbowsL.Length)];
-        ElbowsR.sharedMesh = characterAssetSO.ElbowsR[Random.Range(0, characterAssetSO.ElbowsR.Length)];
-        KneeL.sharedMesh = characterAssetSO.KneeL[Random.Range(0, characterAssetSO.KneeL.Length)];
-        KneeR.sharedMesh = characterAssetSO.KneeR[Random.Range(0, characterAssetSO.KneeR.Length)];
-    }
-
-    public void CreateRandomFemaleCharacter()
-    {
-        F_Hair.sharedMesh = characterAssetSO.F_Hair[Random.Range(0, characterAssetSO.F_Hair.Length)];
-        F_Head.sharedMesh = characterAssetSO.F_Head[Random.Range(0, characterAssetSO.F_Head.Length)];
-        F_Torso.sharedMesh = characterAssetSO.F_Torso[Random.Range(0, characterAssetSO.F_Torso.Length)];
-        F_Legs.sharedMesh = characterAssetSO.F_Legs[Random.Range(0, characterAssetSO.F_Legs.Length)];
+        int RandomPauldrom = Random.Range(0, unisexUnisexCharacterSO.PauldronL.Length);
+        int RandomElbows = Random.Range(0, unisexUnisexCharacterSO.ElbowsL.Length);
+        int RandomKnee = Random.Range(0, unisexUnisexCharacterSO.KneeL.Length);
         
+        Cape.sharedMesh = unisexUnisexCharacterSO.Cape[Random.Range(0, unisexUnisexCharacterSO.Cape.Length)];
+        Belt.sharedMesh = unisexUnisexCharacterSO.Belt[Random.Range(0, unisexUnisexCharacterSO.Belt.Length)];
+        Eyebrows.sharedMesh = unisexUnisexCharacterSO.Eyebrows[Random.Range(0, unisexUnisexCharacterSO.Eyebrows.Length)];
+        
+        PauldromL.sharedMesh = unisexUnisexCharacterSO.PauldronL[RandomPauldrom];
+        PauldromR.sharedMesh = unisexUnisexCharacterSO.PauldronR[RandomPauldrom];
+        ElbowsL.sharedMesh = unisexUnisexCharacterSO.ElbowsL[RandomElbows];
+        ElbowsR.sharedMesh = unisexUnisexCharacterSO.ElbowsR[RandomElbows];
+        KneeL.sharedMesh = unisexUnisexCharacterSO.KneeL[RandomKnee];
+        KneeR.sharedMesh = unisexUnisexCharacterSO.KneeR[RandomKnee];
     }
 
     public void CreateRandomMaleCharacter()
     {
-        M_Hair.sharedMesh = characterAssetSO.M_Hair[Random.Range(0, characterAssetSO.M_Hair.Length)];
-        M_Head.sharedMesh = characterAssetSO.M_Head[Random.Range(0, characterAssetSO.M_Head.Length)];
-        M_FacialHair.sharedMesh = characterAssetSO.M_FacialHair[Random.Range(0, characterAssetSO.M_FacialHair.Length)];
-        M_Torso.sharedMesh = characterAssetSO.M_Torso[Random.Range(0, characterAssetSO.M_Torso.Length)];
-        M_Legs.sharedMesh = characterAssetSO.M_Legs[Random.Range(0, characterAssetSO.M_Legs.Length)];
+        int RandomMaleForearm = Random.Range(0, maleCharacterSO.ForearmL.Length);
+        int RandomMaleArm = Random.Range(0, maleCharacterSO.ArmL.Length);
+        int RandomMaleHand = Random.Range(0, maleCharacterSO.HandL.Length);
+        int RandomMaleCalf = Random.Range(0, maleCharacterSO.CalfL.Length);
+        int RandomMaleFeet = Random.Range(0, maleCharacterSO.FeetL.Length);
+        
+        Hair.sharedMesh = maleCharacterSO.Hair[Random.Range(0, maleCharacterSO.Hair.Length)];
+        Head.sharedMesh = maleCharacterSO.Head[Random.Range(0, maleCharacterSO.Head.Length)];
+        FacialHair.sharedMesh = maleCharacterSO.FacialHair[Random.Range(0, maleCharacterSO.FacialHair.Length)];
+        Torso.sharedMesh = maleCharacterSO.Torso[Random.Range(0, maleCharacterSO.Torso.Length)];
+        Legs.sharedMesh = maleCharacterSO.Legs[Random.Range(0, maleCharacterSO.Legs.Length)];
+        
+        ForearmL.sharedMesh = maleCharacterSO.ForearmL[RandomMaleForearm];
+        ForearmR.sharedMesh = maleCharacterSO.ForearmR[RandomMaleForearm];
+        ArmL.sharedMesh = maleCharacterSO.ArmL[RandomMaleArm];
+        ArmR.sharedMesh = maleCharacterSO.ArmR[RandomMaleArm];
+        HandL.sharedMesh = maleCharacterSO.HandL[RandomMaleHand];
+        HandR.sharedMesh = maleCharacterSO.HandR[RandomMaleHand];
+        CalfL.sharedMesh = maleCharacterSO.CalfL[RandomMaleCalf];
+        CalfR.sharedMesh = maleCharacterSO.CalfR[RandomMaleCalf];
+        FeetL.sharedMesh = maleCharacterSO.FeetL[RandomMaleFeet];
+        FeetR.sharedMesh = maleCharacterSO.FeetR[RandomMaleFeet];
+    }
 
-        int ForearmRandom = Random.Range(0, characterAssetSO.M_Forearm.Length);
-        int ArmRandom = Random.Range(0, characterAssetSO.M_Arm.Length);
-        int HandRandom = Random.Range(0, characterAssetSO.M_Hand.Length);
-        int CalfRandom = Random.Range(0, characterAssetSO.M_Calf.Length);
-        int FeetRandom = Random.Range(0, characterAssetSO.M_Feet.Length);
+    public void CreateRandomFemaleCharacter()
+    {
+        int RandomFemaleForearm = Random.Range(0, femaleCharacterSO.ForearmL.Length);
+        int RandomFemaleArm = Random.Range(0, femaleCharacterSO.ArmL.Length);
+        int RandomFemaleHand = Random.Range(0, femaleCharacterSO.HandL.Length);
+        int RandomFemaleCalf = Random.Range(0, femaleCharacterSO.CalfL.Length);
+        int RandomFemaleFeet = Random.Range(0, femaleCharacterSO.FeetL.Length);
+
+        FacialHair.sharedMesh = null;
+        Hair.sharedMesh = femaleCharacterSO.Hair[Random.Range(0, femaleCharacterSO.Hair.Length)];
+        Head.sharedMesh = femaleCharacterSO.Head[Random.Range(0, femaleCharacterSO.Head.Length)];
+        Torso.sharedMesh = femaleCharacterSO.Torso[Random.Range(0, femaleCharacterSO.Torso.Length)];
+        Legs.sharedMesh = femaleCharacterSO.Legs[Random.Range(0, femaleCharacterSO.Legs.Length)];
+        
+        ForearmL.sharedMesh = femaleCharacterSO.ForearmL[RandomFemaleForearm];
+        ForearmR.sharedMesh = femaleCharacterSO.ForearmR[RandomFemaleForearm];
+        ArmL.sharedMesh = femaleCharacterSO.ArmL[RandomFemaleArm];
+        ArmR.sharedMesh = femaleCharacterSO.ArmR[RandomFemaleArm];
+        HandL.sharedMesh = femaleCharacterSO.HandL[RandomFemaleHand];
+        HandR.sharedMesh = femaleCharacterSO.HandR[RandomFemaleHand];
+        CalfL.sharedMesh = femaleCharacterSO.CalfL[RandomFemaleCalf];
+        CalfR.sharedMesh = femaleCharacterSO.CalfR[RandomFemaleCalf];
+        FeetL.sharedMesh = femaleCharacterSO.FeetL[RandomFemaleFeet];
+        FeetR.sharedMesh = femaleCharacterSO.FeetR[RandomFemaleFeet];
     }
 }

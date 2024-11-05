@@ -1,279 +1,165 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class clothing : MonoBehaviour
 {
-
-
     public GameObject skin_head;
     public GameObject skin_body;
-  
-
     public GameObject cigarette;
     public GameObject crowbar;
     public GameObject fireaxe;
     public GameObject glock;
     public GameObject phone;
-    
-
     public GameObject beard_a;
     public GameObject beard_b;
     public GameObject beard_c;
     public GameObject beard_d;
-
     public GameObject hair_a;
     public GameObject hair_b;
     public GameObject hair_c;
     public GameObject hair_d;
     public GameObject hair_e;
-
     public GameObject cap;
     public GameObject cap2;
     public GameObject cap3;
     public GameObject chain1;
     public GameObject chain2;
     public GameObject chain3;
-    
     public GameObject banker_suit;
-
     public GameObject cock_suit;
     public GameObject cock_suit_hat;
-
     public GameObject farmer_suit;
     public GameObject farmer_suit_hat;
-
     public GameObject fireman_suit;
     public GameObject fireman_suit_hat;
-
     public GameObject mechanic_suit;
     public GameObject mechanic_suit_hat;
-
     public GameObject nurse_suit;
-
     public GameObject police_suit;
     public GameObject police_suit_hat;
-
     public GameObject roober_suit;
     public GameObject roober_suit_hat;
-
     public GameObject security_guard_suit;
     public GameObject security_guard_suit_hat;
-
     public GameObject seller_suit;
-
     public GameObject worker_suit;
     public GameObject worker_suit_hat;
-
     public GameObject glasses;
     public GameObject jacket;
     public GameObject pullover;
     public GameObject scarf;
     public GameObject shirt;
-
     public GameObject shoes1;
     public GameObject shoes2;
     public GameObject shoes3;
-
     public GameObject shortpants;
     public GameObject t_shirt;
     public GameObject tank_top;
     public GameObject trousers;
-
-
-  
     
     public Texture[] skin_textures;
-
     public Texture[] beard_textures;
-
     public Texture[] hair_a_textures;
     public Texture[] hair_b_textures;
     public Texture[] hair_c_textures;
     public Texture[] hair_d_textures;
     public Texture[] hair_e_textures;
-
     public Texture[] cap_textures;
     public Texture[] cap2_textures;
     public Texture[] cap3_textures;
     public Texture[] chain1_textures;
     public Texture[] chain2_textures;
     public Texture[] chain3_textures;
-
     public Texture[] banker_suit_texture;
-
     public Texture cock_suit_texture;
-    
-
     public Texture farmer_suit_texture;
-    
-
     public Texture fireman_suit_texture;
-    
-
     public Texture mechanic_suit_texture;
-   
-
     public Texture nurse_suit_texture;
-
     public Texture police_suit_texture;
-
-
     public Texture roober_suit_texture;
-
-
     public Texture security_guard_suit_texture;
-   
-
     public Texture seller_suit_texture;
-
     public Texture worker_suit_texture;
-
-
     public Texture[] glasses_texture;
     public Texture[] jacket_textures;
     public Texture[] pullover_textures;
     public Texture[] scarf_textures;
     public Texture[] shirt_textures;
-
     public Texture[] shoes1_textures;
     public Texture[] shoes2_textures;
     public Texture[] shoes3_textures;
-
     public Texture[] shortpants_textures;
     public Texture[] t_shirt_textures;
     public Texture[] tank_top_textures;
     public Texture[] trousers_textures;
 
     public Animator ani;
-
-
+    
     public bool show_run;
-   
-
-   
-
     bool hat;
-
-
-
-
-
-
-
-   
-
-
-
+    
     Coroutine coroutine_random_clothing;
 
     IEnumerator start_random_clothing()
     {
         yield return new WaitForSeconds(0);
 
-        // disapear all cloth, for a new run
-
         hat = true;
-
         hair_a.SetActive(false);
         hair_b.SetActive(false);
         hair_c.SetActive(false);
         hair_d.SetActive(false);
         hair_e.SetActive(false);
-
         beard_a.SetActive(false);
         beard_b.SetActive(false);
         beard_c.SetActive(false);
         beard_d.SetActive(false);
-
         cap.SetActive(false);
         cap2.SetActive(false);
         cap3.SetActive(false);
-
         chain1.SetActive(false);
         chain2.SetActive(false);
         chain3.SetActive(false);
-
         banker_suit.SetActive(false);
-
         cock_suit.SetActive(false);
         cock_suit_hat.SetActive(false);
-
         farmer_suit.SetActive(false);
         farmer_suit_hat.SetActive(false);
-
         fireman_suit.SetActive(false);
         fireman_suit_hat.SetActive(false);
-
         mechanic_suit.SetActive(false);
         mechanic_suit_hat.SetActive(false);
-
         nurse_suit.SetActive(false);
-
         police_suit.SetActive(false);
         police_suit_hat.SetActive(false);
-
         roober_suit.SetActive(false);
         roober_suit_hat.SetActive(false);
-
         security_guard_suit.SetActive(false);
         security_guard_suit_hat.SetActive(false);
-
         seller_suit.SetActive(false);
-
         worker_suit.SetActive(false);
         worker_suit_hat.SetActive(false);
-
         glasses.SetActive(false);
-
         jacket.SetActive(false);
-
         pullover.SetActive(false);
-
         scarf.SetActive(false);
-
         shirt.SetActive(false);
-
         shoes1.SetActive(false);
-
         shoes2.SetActive(false);
-
         shoes3.SetActive(false);
-
         shortpants.SetActive(false);
-
         t_shirt.SetActive(false);
-
         tank_top.SetActive(false);
-
         trousers.SetActive(false);
-
-
-
-
-
-
-
-
-      
-
-        // determining skin color
 
         int skin_color = UnityEngine.Random.Range(0, 6);
 
         skin_head.GetComponent<Renderer>().materials[0].mainTexture = skin_textures[skin_color];
         skin_body.GetComponent<Renderer>().materials[0].mainTexture = skin_textures[skin_color];
-
-
-
+        
         // determining male or female
         int male_female = UnityEngine.Random.Range(0, 2);
-
-   
-        
-       
-        // does a hat fit for the hair
-        
 
         // determining haircolor
         int hairColor = UnityEngine.Random.Range(0, 4);    // 0 = dark  1 = brown  2 = blonde
@@ -281,22 +167,15 @@ public class clothing : MonoBehaviour
         // male
         if(male_female == 0)
         {
-         
-
             hat = true;
-
             // choose hair type   hair_a , hair_b  , hair_e
             int hair = UnityEngine.Random.Range(0, 3);
-
             if (hair == 0)
             {
                 hair_a.SetActive(true);
-
                 // 0 = full hair    1 = under cut
                 int hair_cut = UnityEngine.Random.Range(0, 2);
                 hat = true;
-            
-
                 if (hairColor == 0)
                 {
                     if (hair_cut == 0)
@@ -318,7 +197,6 @@ public class clothing : MonoBehaviour
                     {
                         hair_a.GetComponent<Renderer>().materials[0].mainTexture = hair_a_textures[3];
                     }
-
                 }
                 if (hairColor == 2)
                 {
@@ -330,10 +208,7 @@ public class clothing : MonoBehaviour
                     {
                         hair_a.GetComponent<Renderer>().materials[0].mainTexture = hair_a_textures[5];
                     }
-
                 }
-
-
             }
 
             if (hair == 1)
@@ -343,9 +218,6 @@ public class clothing : MonoBehaviour
 
                 // 0 = full hair    1 = under cut
                 int hair_cut = UnityEngine.Random.Range(0, 2);
-
-
-
                 if (hairColor == 0)
                 {
                     if (hair_cut == 0)
@@ -367,7 +239,6 @@ public class clothing : MonoBehaviour
                     {
                         hair_b.GetComponent<Renderer>().materials[0].mainTexture = hair_b_textures[3];
                     }
-
                 }
                 if (hairColor == 2)
                 {
@@ -379,59 +250,33 @@ public class clothing : MonoBehaviour
                     {
                         hair_b.GetComponent<Renderer>().materials[0].mainTexture = hair_b_textures[4];
                     }
-
                 }
-
-
-
             }
-
             if (hair == 2)
             {
                 hair_e.SetActive(true);
                 hat = false;
-               
-
-
-
                 if (hairColor == 0)
                 {
-                    
-                        hair_e.GetComponent<Renderer>().materials[0].mainTexture = hair_e_textures[0];
-                    
-                   
+                    hair_e.GetComponent<Renderer>().materials[0].mainTexture = hair_e_textures[0];
                 }
                 if (hairColor == 1)
                 {
-                   
-                        hair_e.GetComponent<Renderer>().materials[0].mainTexture = hair_e_textures[1];
-                    
-                   
-
+                    hair_e.GetComponent<Renderer>().materials[0].mainTexture = hair_e_textures[1];
                 }
                 if (hairColor == 2)
                 {
-                   
-                        hair_e.GetComponent<Renderer>().materials[0].mainTexture = hair_e_textures[2];
-                    
-                   
-
+                    hair_e.GetComponent<Renderer>().materials[0].mainTexture = hair_e_textures[2];
                 }
-
-
             }
-
         }
         // female
         if(male_female == 1)
         {
-            
             hat = false;
-
             // choose hair type   hair_c , hair_d
             int hair = UnityEngine.Random.Range(0, 2);
-
-
+            
             if(hair == 0)
             {
                 hat = false;

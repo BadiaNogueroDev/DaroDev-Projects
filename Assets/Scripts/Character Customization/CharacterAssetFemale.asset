@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9d4fa169fd36a4cb10ab8288c67125, type: 3}
+  m_Name: CharacterAssetFemale
+  m_EditorClassIdentifier: 
+  Hair:
+  - {fileID: 4300112, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300114, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Head:
+  - {fileID: 4300100, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300102, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  FacialHair: []
+  Torso:
+  - {fileID: 4300108, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300110, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Legs:
+  - {fileID: 4300104, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300106, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  ForearmL:
+  - {fileID: 4300084, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300088, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  ForearmR:
+  - {fileID: 4300086, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300090, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  ArmL:
+  - {fileID: 4300060, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300064, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  ArmR:
+  - {fileID: 4300062, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300066, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  HandL:
+  - {fileID: 4300092, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300096, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  HandR:
+  - {fileID: 4300094, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300098, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  CalfL:
+  - {fileID: 4300068, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300072, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  CalfR:
+  - {fileID: 4300070, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300074, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  FeetL:
+  - {fileID: 4300076, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300082, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  FeetR:
+  - {fileID: 4300078, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300080, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
