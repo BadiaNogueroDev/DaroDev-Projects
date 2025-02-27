@@ -3,7 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Character Customization/Create Character Asset")]
 public class UnisexCharacterSO : ScriptableObject
 {
-    [Header("Unisex")]
     public Mesh [] Cape;
     public Mesh [] Belt;
     public Mesh [] PauldronL;
