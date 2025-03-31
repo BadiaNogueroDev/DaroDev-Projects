@@ -10,10 +10,8 @@ public class CharacterCustomizerEditor : Editor
         
         CharacterCustomizer characterCustomizer = (CharacterCustomizer)target;
 
-        if (GUILayout.Button("Randomise Unisex Character")) 
-            characterCustomizer.CreateRandomUnisexCharacter();
-        if (GUILayout.Button("Randomise Gendered Character"))
-            characterCustomizer.CreateRandomGenderedCharacter();
+        if (GUILayout.Button("Randomise Character"))
+            characterCustomizer.SetCharacter();
         if (GUILayout.Button("Swap Gender")) 
             characterCustomizer.SwapGender();
     }

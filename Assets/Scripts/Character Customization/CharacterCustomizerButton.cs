@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterCustomizerButton : MonoBehaviour
 {
-    public enum BODY_PART { Hair, Head, FacialHair, Torso, Legs, ForearmL, ForearmR, ArmL, ArmR, HandL, HandR, CalfL, CalfR, FeetL, FeetR, Cape, Belt, PauldronL, PauldronR, Eyebrows, ElbowsL, ElbowsR, KneeL, KneeR}
+    public enum BODY_PART { Hair, Head, FacialHair, Torso, Legs, Forearms, Arms, Hands, Calf, Feet, Cape, Belt, Pauldroms, Eyebrows, Elbows, Knees}
     public BODY_PART bodyPart;
     
     private CharacterCustomizer characterCustomizer;
@@ -25,53 +24,37 @@ public class CharacterCustomizerButton : MonoBehaviour
     {
         switch (bodyPart)
         {
-            case BODY_PART.Hair: characterCustomizer.Hair.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().Hair, "Hair");
+            case BODY_PART.Hair: characterCustomizer.SetHair(IncreaseElement(characterCustomizer.GetGenderedSO().Hair));
                 break;
-            case BODY_PART.Head: characterCustomizer.Head.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().Head, "Head");
+            case BODY_PART.Head: characterCustomizer.SetHead(IncreaseElement(characterCustomizer.GetGenderedSO().Head));
                 break;
-            case BODY_PART.FacialHair: characterCustomizer.FacialHair.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().FacialHair, "FacialHair");
+            case BODY_PART.FacialHair: characterCustomizer.SetFacialHair(IncreaseElement(characterCustomizer.GetGenderedSO().FacialHair));
                 break;
-            case BODY_PART.Torso: characterCustomizer.Torso.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().Torso, "Torso");
+            case BODY_PART.Torso: characterCustomizer.SetTorso(IncreaseElement(characterCustomizer.GetGenderedSO().Torso));
                 break;
-            case BODY_PART.Legs: characterCustomizer.Legs.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().Legs, "Legs");
+            case BODY_PART.Legs: characterCustomizer.SetLegs(IncreaseElement(characterCustomizer.GetGenderedSO().Legs));
                 break;
-            case BODY_PART.ForearmL: characterCustomizer.ForearmL.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().ForearmL, "ForearmL");
+            case BODY_PART.Forearms: characterCustomizer.SetForearms(IncreaseElement(characterCustomizer.GetGenderedSO().ForearmL));
                 break;
-            case BODY_PART.ForearmR: characterCustomizer.ForearmR.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().ForearmR, "ForearmR");
+            case BODY_PART.Arms: characterCustomizer.SetArms(IncreaseElement(characterCustomizer.GetGenderedSO().ArmL));
                 break;
-            case BODY_PART.ArmL: characterCustomizer.ArmL.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().ArmL, "ArmL");
+            case BODY_PART.Hands: characterCustomizer.SetHands(IncreaseElement(characterCustomizer.GetGenderedSO().HandL));
                 break;
-            case BODY_PART.ArmR: characterCustomizer.ArmR.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().ArmR, "ArmR");
+            case BODY_PART.Calf: characterCustomizer.SetCalf(IncreaseElement(characterCustomizer.GetGenderedSO().CalfL));
                 break;
-            case BODY_PART.HandL: characterCustomizer.HandL.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().HandL, "HandL");
+            case BODY_PART.Feet: characterCustomizer.SetFeet(IncreaseElement(characterCustomizer.GetGenderedSO().FeetL));
                 break;
-            case BODY_PART.HandR: characterCustomizer.HandR.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().HandR, "HandR");
+            case BODY_PART.Cape: characterCustomizer.SetCape(IncreaseElement(characterCustomizer.GetUnisexSO().Cape));
                 break;
-            case BODY_PART.CalfL: characterCustomizer.CalfL.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().CalfL, "CalfL");
+            case BODY_PART.Belt: characterCustomizer.SetBelt(IncreaseElement(characterCustomizer.GetUnisexSO().Belt));
                 break;
-            case BODY_PART.CalfR: characterCustomizer.CalfR.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().CalfR, "CalfR");
+            case BODY_PART.Pauldroms: characterCustomizer.SetPauldroms(IncreaseElement(characterCustomizer.GetUnisexSO().PauldronL));
                 break;
-            case BODY_PART.FeetL: characterCustomizer.FeetL.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().FeetL, "FeetL");
+            case BODY_PART.Eyebrows: characterCustomizer.SetEyebrows(IncreaseElement(characterCustomizer.GetUnisexSO().Eyebrows));
                 break;
-            case BODY_PART.FeetR: characterCustomizer.FeetR.sharedMesh = IncreaseElement(characterCustomizer.GetCurrentSO().FeetR, "FeetR");
+            case BODY_PART.Elbows: characterCustomizer.SetElbows(IncreaseElement(characterCustomizer.GetUnisexSO().ElbowsL));
                 break;
-            case BODY_PART.Cape: characterCustomizer.Cape.sharedMesh = IncreaseElement(characterCustomizer.GetUnisexSO().Cape, "Cape");
-                break;
-            case BODY_PART.Belt: characterCustomizer.Belt.sharedMesh = IncreaseElement(characterCustomizer.GetUnisexSO().Belt, "Belt");
-                break;
-            case BODY_PART.PauldronL: characterCustomizer.PauldronL.sharedMesh = IncreaseElement(characterCustomizer.GetUnisexSO().PauldronL, "PauldronL");
-                break;
-            case BODY_PART.PauldronR: characterCustomizer.PauldronR.sharedMesh = IncreaseElement(characterCustomizer.GetUnisexSO().PauldronR, "PauldronR");
-                break;
-            case BODY_PART.Eyebrows: characterCustomizer.Eyebrows.sharedMesh = IncreaseElement(characterCustomizer.GetUnisexSO().Eyebrows, "Eyebrows");
-                break;
-            case BODY_PART.ElbowsL: characterCustomizer.ElbowsL.sharedMesh = IncreaseElement(characterCustomizer.GetUnisexSO().ElbowsL, "ElbowsL");
-                break;
-            case BODY_PART.ElbowsR: characterCustomizer.ElbowsR.sharedMesh = IncreaseElement(characterCustomizer.GetUnisexSO().ElbowsR, "ElbowsR");
-                break;
-            case BODY_PART.KneeL: characterCustomizer.KneeL.sharedMesh = IncreaseElement(characterCustomizer.GetUnisexSO().KneeL, "KneeL");
-                break;
-            case BODY_PART.KneeR: characterCustomizer.KneeR.sharedMesh = IncreaseElement(characterCustomizer.GetUnisexSO().KneeR, "KneeR");
+            case BODY_PART.Knees: characterCustomizer.SetKnees(IncreaseElement(characterCustomizer.GetUnisexSO().KneeL));
                 break;
         }
     }
@@ -80,76 +63,56 @@ public class CharacterCustomizerButton : MonoBehaviour
     {
         switch (bodyPart)
         {
-            case BODY_PART.Hair: characterCustomizer.Hair.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().Hair, "Hair");
+            case BODY_PART.Hair: characterCustomizer.SetHair(DecreaseElement(characterCustomizer.GetGenderedSO().Hair));
                 break;
-            case BODY_PART.Head: characterCustomizer.Head.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().Head, "Head");
+            case BODY_PART.Head: characterCustomizer.SetHead(DecreaseElement(characterCustomizer.GetGenderedSO().Head));
                 break;
-            case BODY_PART.FacialHair: characterCustomizer.FacialHair.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().FacialHair, "FacialHair");
+            case BODY_PART.FacialHair: characterCustomizer.SetFacialHair(DecreaseElement(characterCustomizer.GetGenderedSO().FacialHair));
                 break;
-            case BODY_PART.Torso: characterCustomizer.Torso.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().Torso, "Torso");
+            case BODY_PART.Torso: characterCustomizer.SetTorso(DecreaseElement(characterCustomizer.GetGenderedSO().Torso));
                 break;
-            case BODY_PART.Legs: characterCustomizer.Legs.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().Legs, "Legs");
+            case BODY_PART.Legs: characterCustomizer.SetLegs(DecreaseElement(characterCustomizer.GetGenderedSO().Legs));
                 break;
-            case BODY_PART.ForearmL: characterCustomizer.ForearmL.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().ForearmL, "ForearmL");
+            case BODY_PART.Forearms: characterCustomizer.SetForearms(DecreaseElement(characterCustomizer.GetGenderedSO().ForearmL));
                 break;
-            case BODY_PART.ForearmR: characterCustomizer.ForearmR.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().ForearmR, "ForearmR");
+            case BODY_PART.Arms: characterCustomizer.SetArms(DecreaseElement(characterCustomizer.GetGenderedSO().ArmL));
                 break;
-            case BODY_PART.ArmL: characterCustomizer.ArmL.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().ArmL, "ArmL");
+            case BODY_PART.Hands: characterCustomizer.SetHands(DecreaseElement(characterCustomizer.GetGenderedSO().HandL));
                 break;
-            case BODY_PART.ArmR: characterCustomizer.ArmR.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().ArmR, "ArmR");
+            case BODY_PART.Calf: characterCustomizer.SetCalf(DecreaseElement(characterCustomizer.GetGenderedSO().CalfL));
                 break;
-            case BODY_PART.HandL: characterCustomizer.HandL.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().HandL, "HandL");
+            case BODY_PART.Feet: characterCustomizer.SetFeet(DecreaseElement(characterCustomizer.GetGenderedSO().FeetL));
                 break;
-            case BODY_PART.HandR: characterCustomizer.HandR.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().HandR, "HandR");
+            case BODY_PART.Cape: characterCustomizer.SetCape(DecreaseElement(characterCustomizer.GetUnisexSO().Cape));
                 break;
-            case BODY_PART.CalfL: characterCustomizer.CalfL.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().CalfL, "CalfL");
+            case BODY_PART.Belt: characterCustomizer.SetBelt(DecreaseElement(characterCustomizer.GetUnisexSO().Belt));
                 break;
-            case BODY_PART.CalfR: characterCustomizer.CalfR.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().CalfR, "CalfR");
+            case BODY_PART.Pauldroms: characterCustomizer.SetPauldroms(DecreaseElement(characterCustomizer.GetUnisexSO().PauldronL));
                 break;
-            case BODY_PART.FeetL: characterCustomizer.FeetL.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().FeetL, "FeetL");
+            case BODY_PART.Eyebrows: characterCustomizer.SetEyebrows(DecreaseElement(characterCustomizer.GetUnisexSO().Eyebrows));
                 break;
-            case BODY_PART.FeetR: characterCustomizer.FeetR.sharedMesh = DecreaseElement(characterCustomizer.GetCurrentSO().FeetR, "FeetR");
+            case BODY_PART.Elbows: characterCustomizer.SetElbows(DecreaseElement(characterCustomizer.GetUnisexSO().ElbowsL));
                 break;
-            case BODY_PART.Cape: characterCustomizer.Cape.sharedMesh = DecreaseElement(characterCustomizer.GetUnisexSO().Cape, "Cape");
-                break;
-            case BODY_PART.Belt: characterCustomizer.Belt.sharedMesh = DecreaseElement(characterCustomizer.GetUnisexSO().Belt, "Belt");
-                break;
-            case BODY_PART.PauldronL: characterCustomizer.PauldronL.sharedMesh = DecreaseElement(characterCustomizer.GetUnisexSO().PauldronL, "PauldronL");
-                break;
-            case BODY_PART.PauldronR: characterCustomizer.PauldronR.sharedMesh = DecreaseElement(characterCustomizer.GetUnisexSO().PauldronR, "PauldronR");
-                break;
-            case BODY_PART.Eyebrows: characterCustomizer.Eyebrows.sharedMesh = DecreaseElement(characterCustomizer.GetUnisexSO().Eyebrows, "Eyebrows");
-                break;
-            case BODY_PART.ElbowsL: characterCustomizer.ElbowsL.sharedMesh = DecreaseElement(characterCustomizer.GetUnisexSO().ElbowsL, "ElbowsL");
-                break;
-            case BODY_PART.ElbowsR: characterCustomizer.Cape.sharedMesh = DecreaseElement(characterCustomizer.GetUnisexSO().ElbowsR, "ElbowsR");
-                break;
-            case BODY_PART.KneeL: characterCustomizer.KneeL.sharedMesh = DecreaseElement(characterCustomizer.GetUnisexSO().KneeL, "KneeL");
-                break;
-            case BODY_PART.KneeR: characterCustomizer.KneeR.sharedMesh = DecreaseElement(characterCustomizer.GetUnisexSO().KneeR, "KneeR");
+            case BODY_PART.Knees: characterCustomizer.SetKnees(DecreaseElement(characterCustomizer.GetUnisexSO().KneeL));
                 break;
         }
     }
     
-    private Mesh IncreaseElement(Mesh [] mesh, string name)
+    private int IncreaseElement(Mesh [] mesh)
     {
         index++;
         if (index >= mesh.Length)
             index = 0;
         
-        PlayerPrefs.SetInt(name, index);
-        Debug.Log(name);
-        return mesh[index];
+        return index;
     }
     
-    private Mesh DecreaseElement(Mesh [] mesh, string name)
+    private int DecreaseElement(Mesh [] mesh)
     {
         index--;
         if (index < 0)
             index = mesh.Length - 1;
         
-        PlayerPrefs.SetInt(name, index);
-        Debug.Log(name);
-        return mesh[index];
+        return index;
     }
 }

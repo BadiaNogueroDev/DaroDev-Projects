@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daaddb40bb9d6a4b91aa11bd1e58c88, type: 3}
+  m_Name: CharacterAssetUnisex
+  m_EditorClassIdentifier: 
+  Cape:
+  - {fileID: 4300120, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300122, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Belt:
+  - {fileID: 4300118, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300116, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  PauldronL:
+  - {fileID: 4300148, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300144, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  PauldronR:
+  - {fileID: 4300150, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300146, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Eyebrows:
+  - {fileID: 4300132, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300134, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  ElbowsL:
+  - {fileID: 4300128, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300124, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  ElbowsR:
+  - {fileID: 4300130, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300126, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  KneeL:
+  - {fileID: 4300140, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300136, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  KneeR:
+  - {fileID: 4300142, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300138, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_Hair:
+  - {fileID: 4300112, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300114, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_Head:
+  - {fileID: 4300100, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300102, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_Torso:
+  - {fileID: 4300108, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300110, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_Legs:
+  - {fileID: 4300104, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300106, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_ForearmL:
+  - {fileID: 4300084, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300088, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_ForearmR:
+  - {fileID: 4300086, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300090, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_ArmL:
+  - {fileID: 4300060, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300064, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_ArmR:
+  - {fileID: 4300062, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300066, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_HandL:
+  - {fileID: 4300092, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300096, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_HandR:
+  - {fileID: 4300094, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300098, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_CalfL:
+  - {fileID: 4300068, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300072, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_CalfR:
+  - {fileID: 4300070, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300074, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_FeetL:
+  - {fileID: 4300076, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300082, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  F_FeetR:
+  - {fileID: 4300078, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300080, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_Hair:
+  - {fileID: 4300056, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300058, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_Head:
+  - {fileID: 4300040, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300042, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_FacialHair:
+  - {fileID: 4300018, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300016, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_Torso:
+  - {fileID: 4300054, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300052, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_Legs:
+  - {fileID: 4300036, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300038, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_ForearmL:
+  - {fileID: 4300028, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300032, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_ForearmR:
+  - {fileID: 4300030, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300034, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_ArmL:
+  - {fileID: 4300000, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300004, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_ArmR:
+  - {fileID: 4300002, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300006, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_HandL:
+  - {fileID: 4300044, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300048, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_HandR:
+  - {fileID: 4300046, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300050, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_CalfL:
+  - {fileID: 4300008, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300012, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_CalfR:
+  - {fileID: 4300010, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300014, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_FeetL:
+  - {fileID: 4300020, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300024, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  M_FeetR:
+  - {fileID: 4300022, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300026, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}

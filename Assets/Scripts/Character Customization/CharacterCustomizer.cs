@@ -1,14 +1,18 @@
+using System;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CharacterCustomizer : MonoBehaviour
 {
+    public event Action <CharacterCustomizer> OnBodyPartChanged = delegate {};
+    
     [SerializeField] private UnisexCharacterSO unisexCharacterSO;
     [SerializeField] private GenderedCharacterSO maleCharacterSO;
     [SerializeField] private GenderedCharacterSO femaleCharacterSO;
     private GenderedCharacterSO currentGenderedCharacterSO;
     
-    [Header("Unisex")]
+    [Header("Unisex Elements")]
     public SkinnedMeshRenderer Cape;
     public SkinnedMeshRenderer Belt;
     public SkinnedMeshRenderer Eyebrows;
@@ -19,7 +23,7 @@ public class CharacterCustomizer : MonoBehaviour
     public SkinnedMeshRenderer KneeL;
     public SkinnedMeshRenderer KneeR;
     
-    [Header("Gendered")]
+    [Header("Gendered Elements")]
     public SkinnedMeshRenderer Hair;
     public SkinnedMeshRenderer Head;
     public SkinnedMeshRenderer FacialHair;
@@ -35,93 +39,234 @@ public class CharacterCustomizer : MonoBehaviour
     public SkinnedMeshRenderer CalfR;
     public SkinnedMeshRenderer FeetL;
     public SkinnedMeshRenderer FeetR;
+
+    public int GenderIndex;
+    public int CapeIndex;
+    public int BeltIndex;
+    public int EyebrowsIndex;
+    public int PauldromIndex;
+    public int ElbowsIndex;
+    public int KneeIndex;
+    public int FacialHairIndex;
+    public int HairIndex;
+    public int HeadIndex;
+    public int TorsoIndex;
+    public int LegsIndex;
+    public int ForearmIndex;
+    public int ArmIndex;
+    public int HandIndex;
+    public int CalfIndex;
+    public int FeetIndex;
     
     private void Start()
     {
-        currentGenderedCharacterSO = PlayerPrefs.GetInt("Gender", 0) == 0 ? maleCharacterSO : femaleCharacterSO;
-        CreateRandomGenderedCharacter();
-        CreateRandomUnisexCharacter();
+        LoadCharacter();
+        currentGenderedCharacterSO = GenderIndex == 0 ? maleCharacterSO : femaleCharacterSO;
+        SetCharacter();
     }
 
-    public void CreateRandomUnisexCharacter()
+    public void SetRandomIndexValues()
     {
-        int RandomPauldrom = Random.Range(0, unisexCharacterSO.PauldronL.Length);
-        int RandomElbows = Random.Range(0, unisexCharacterSO.ElbowsL.Length);
-        int RandomKnee = Random.Range(0, unisexCharacterSO.KneeL.Length);
-        
-        Cape.sharedMesh = unisexCharacterSO.Cape[Random.Range(0, unisexCharacterSO.Cape.Length)];
-        Belt.sharedMesh = unisexCharacterSO.Belt[Random.Range(0, unisexCharacterSO.Belt.Length)];
-        Eyebrows.sharedMesh = unisexCharacterSO.Eyebrows[Random.Range(0, unisexCharacterSO.Eyebrows.Length)];
-        
-        PauldronL.sharedMesh = unisexCharacterSO.PauldronL[RandomPauldrom];
-        PauldronR.sharedMesh = unisexCharacterSO.PauldronR[RandomPauldrom];
-        ElbowsL.sharedMesh = unisexCharacterSO.ElbowsL[RandomElbows];
-        ElbowsR.sharedMesh = unisexCharacterSO.ElbowsR[RandomElbows];
-        KneeL.sharedMesh = unisexCharacterSO.KneeL[RandomKnee];
-        KneeR.sharedMesh = unisexCharacterSO.KneeR[RandomKnee];
+        FacialHairIndex = Random.Range(0, currentGenderedCharacterSO.FacialHair.Length);
+        HairIndex = Random.Range(0, currentGenderedCharacterSO.Hair.Length);
+        HeadIndex = Random.Range(0, currentGenderedCharacterSO.Head.Length);
+        TorsoIndex = Random.Range(0, currentGenderedCharacterSO.Torso.Length);
+        LegsIndex = Random.Range(0, currentGenderedCharacterSO.Legs.Length);
+        ForearmIndex = Random.Range(0, currentGenderedCharacterSO.ForearmL.Length);
+        ArmIndex = Random.Range(0, currentGenderedCharacterSO.ArmL.Length);
+        HandIndex = Random.Range(0, currentGenderedCharacterSO.HandL.Length);
+        CalfIndex = Random.Range(0, currentGenderedCharacterSO.CalfL.Length);
+        FeetIndex = Random.Range(0, currentGenderedCharacterSO.FeetL.Length);
+        CapeIndex = Random.Range(0, unisexCharacterSO.Cape.Length);
+        BeltIndex = Random.Range(0, unisexCharacterSO.Belt.Length);
+        EyebrowsIndex = Random.Range(0, unisexCharacterSO.Eyebrows.Length);
+        PauldromIndex = Random.Range(0, unisexCharacterSO.PauldronL.Length);
+        ElbowsIndex = Random.Range(0, unisexCharacterSO.ElbowsL.Length);
+        KneeIndex = Random.Range(0, unisexCharacterSO.KneeL.Length);
     }
 
-    public void CreateRandomGenderedCharacter()
+    public void SetCharacter()
     {
-        int RandomForearm = Random.Range(0, currentGenderedCharacterSO.ForearmL.Length);
-        int RandomArm = Random.Range(0, currentGenderedCharacterSO.ArmL.Length);
-        int RandomHand = Random.Range(0, currentGenderedCharacterSO.HandL.Length);
-        int RandomCalf = Random.Range(0, currentGenderedCharacterSO.CalfL.Length);
-        int RandomFeet = Random.Range(0, currentGenderedCharacterSO.FeetL.Length);
-
-        FacialHair.sharedMesh = !currentGenderedCharacterSO.FacialHair.Any() ? null : currentGenderedCharacterSO.FacialHair[Random.Range(0, currentGenderedCharacterSO.FacialHair.Length)];
-        
-        Hair.sharedMesh = currentGenderedCharacterSO.Hair[Random.Range(0, currentGenderedCharacterSO.Hair.Length)];
-        Head.sharedMesh = currentGenderedCharacterSO.Head[Random.Range(0, currentGenderedCharacterSO.Head.Length)];
-        Torso.sharedMesh = currentGenderedCharacterSO.Torso[Random.Range(0, currentGenderedCharacterSO.Torso.Length)];
-        Legs.sharedMesh = currentGenderedCharacterSO.Legs[Random.Range(0, currentGenderedCharacterSO.Legs.Length)];
-        
-        ForearmL.sharedMesh = currentGenderedCharacterSO.ForearmL[RandomForearm];
-        ForearmR.sharedMesh = currentGenderedCharacterSO.ForearmR[RandomForearm];
-        ArmL.sharedMesh = currentGenderedCharacterSO.ArmL[RandomArm];
-        ArmR.sharedMesh = currentGenderedCharacterSO.ArmR[RandomArm];
-        HandL.sharedMesh = currentGenderedCharacterSO.HandL[RandomHand];
-        HandR.sharedMesh = currentGenderedCharacterSO.HandR[RandomHand];
-        CalfL.sharedMesh = currentGenderedCharacterSO.CalfL[RandomCalf];
-        CalfR.sharedMesh = currentGenderedCharacterSO.CalfR[RandomCalf];
-        FeetL.sharedMesh = currentGenderedCharacterSO.FeetL[RandomFeet];
-        FeetR.sharedMesh = currentGenderedCharacterSO.FeetR[RandomFeet];
+        FacialHair.sharedMesh = !currentGenderedCharacterSO.FacialHair.Any() ? null : currentGenderedCharacterSO.FacialHair[FacialHairIndex];
+        Hair.sharedMesh = currentGenderedCharacterSO.Hair[HairIndex];
+        Head.sharedMesh = currentGenderedCharacterSO.Head[HeadIndex];
+        Torso.sharedMesh = currentGenderedCharacterSO.Torso[TorsoIndex];
+        Legs.sharedMesh = currentGenderedCharacterSO.Legs[LegsIndex];
+        ForearmL.sharedMesh = currentGenderedCharacterSO.ForearmL[ForearmIndex];
+        ForearmR.sharedMesh = currentGenderedCharacterSO.ForearmR[ForearmIndex];
+        ArmL.sharedMesh = currentGenderedCharacterSO.ArmL[ArmIndex];
+        ArmR.sharedMesh = currentGenderedCharacterSO.ArmR[ArmIndex];
+        HandL.sharedMesh = currentGenderedCharacterSO.HandL[HandIndex];
+        HandR.sharedMesh = currentGenderedCharacterSO.HandR[HandIndex];
+        CalfL.sharedMesh = currentGenderedCharacterSO.CalfL[CalfIndex];
+        CalfR.sharedMesh = currentGenderedCharacterSO.CalfR[CalfIndex];
+        FeetL.sharedMesh = currentGenderedCharacterSO.FeetL[FeetIndex];
+        FeetR.sharedMesh = currentGenderedCharacterSO.FeetR[FeetIndex];
+        Cape.sharedMesh = unisexCharacterSO.Cape[CapeIndex];
+        Belt.sharedMesh = unisexCharacterSO.Belt[BeltIndex];
+        Eyebrows.sharedMesh = unisexCharacterSO.Eyebrows[EyebrowsIndex];
+        PauldronL.sharedMesh = unisexCharacterSO.PauldronL[PauldromIndex];
+        PauldronR.sharedMesh = unisexCharacterSO.PauldronR[PauldromIndex];
+        ElbowsL.sharedMesh = unisexCharacterSO.ElbowsL[ElbowsIndex];
+        ElbowsR.sharedMesh = unisexCharacterSO.ElbowsR[ElbowsIndex];
+        KneeL.sharedMesh = unisexCharacterSO.KneeL[KneeIndex];
+        KneeR.sharedMesh = unisexCharacterSO.KneeR[KneeIndex];
     }
-
+    
+    public GenderedCharacterSO GetGenderedSO() { return currentGenderedCharacterSO; }
+    public UnisexCharacterSO GetUnisexSO() { return unisexCharacterSO; }
+    
     public void SwapGender()
     {
         currentGenderedCharacterSO = currentGenderedCharacterSO == maleCharacterSO ? femaleCharacterSO : maleCharacterSO;
-        CreateRandomGenderedCharacter();
+        GenderIndex = currentGenderedCharacterSO == maleCharacterSO ? 0 : 1;
+        SetRandomIndexValues();
+        SetCharacter();
     }
 
-    public void SetFemale()
+    public void SetCape(int value)
     {
-        if (currentGenderedCharacterSO != maleCharacterSO) return;
-        currentGenderedCharacterSO = femaleCharacterSO;
-        CreateRandomGenderedCharacter();
-        PlayerPrefs.SetInt("Gender", 1);
+        CapeIndex = value;
+        OnBodyPartChanged(this);
     }
 
-    public void SetMale()
+    public void SetBelt(int value)
     {
-        if (currentGenderedCharacterSO != femaleCharacterSO) return;
-        currentGenderedCharacterSO = maleCharacterSO;
-        CreateRandomGenderedCharacter();
-        PlayerPrefs.SetInt("Gender", 0);
+        BeltIndex = value;
+        OnBodyPartChanged(this);
     }
 
-    public GenderedCharacterSO GetCurrentSO()
+    public void SetEyebrows(int value)
     {
-        return currentGenderedCharacterSO;
+        EyebrowsIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetPauldroms(int value)
+    {
+        PauldromIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetElbows(int value)
+    {
+        EyebrowsIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetKnees(int value)
+    {
+        KneeIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetFacialHair(int value)
+    {
+        FacialHairIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetHair(int value)
+    {
+        HairIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetHead(int value)
+    {
+        HeadIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetTorso(int value)
+    {
+        TorsoIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetLegs(int value)
+    {
+        LegsIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetForearms(int value)
+    {
+        ForearmIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetArms(int value)
+    {
+        ArmIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetHands(int value)
+    {
+        HandIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetCalf(int value)
+    {
+        CalfIndex = value;
+        OnBodyPartChanged(this);
+    }
+
+    public void SetFeet(int value)
+    {
+        FeetIndex = value;
+        OnBodyPartChanged(this);
     }
     
-    public UnisexCharacterSO GetUnisexSO()
+    //TEST
+    private int IncreaseElement(Mesh [] mesh)
     {
-        return unisexCharacterSO;
+        int index = 0;
+        index++;
+        if (index >= mesh.Length)
+            index = 0;
+        
+        return index;
+    }
+    
+    //TEST
+    private int DecreaseElement(Mesh [] mesh)
+    {
+        int index = 0;
+        index--;
+        if (index < 0)
+            index = mesh.Length - 1;
+        
+        return index;
+    }
+    
+    public void SaveCharacter()
+    {
+        CharacterSaveSystem.SaveCharacter(this);
     }
 
     public void LoadCharacter()
     {
+        CharacterCustomizerData data = CharacterSaveSystem.LoadCharacter();
         
+        GenderIndex = data.Gender;
+        CapeIndex = data.Cape;
+        BeltIndex = data.Belt;
+        EyebrowsIndex = data.Eyebrows;
+        PauldromIndex = data.Pauldron;
+        ElbowsIndex = data.Elbows;
+        KneeIndex = data.Knee;
+        FacialHairIndex = data.FacialHair;
+        HairIndex = data.Hair;
+        HeadIndex = data.Head;
+        TorsoIndex = data.Torso;
+        LegsIndex = data.Legs;
+        ForearmIndex = data.Forearm;
+        ArmIndex = data.Arm;
+        HandIndex = data.Hand;
+        CalfIndex = data.Calf;
+        FeetIndex = data.Feet;
     }
 }
